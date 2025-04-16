@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="Pedro Soares, Erick Borborema, Maria Eduarda e Maria Clara"/>
+  <title>Cronômetro/Temporizador</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <div class="tab-buttons">
+      <button class="tab active" data-tab="cronometro">Cronômetro</button>
+      <button class="tab" data-tab="regressiva">Contagem Regressiva</button>
+      <button class="tab" data-tab="timers">Timers</button>
+      <button class="tab" data-tab="pomodoro">Pomodoro</button>
+    </div>
+
+    <!-- Cronômetro -->
+    <div class="tab-content" id="cronometro">
+      <h2>CRONÔMETRO</h2>
+      <div class="timer" id="stopwatch">00:00:00</div>
+      <div class="controls">
+        <button id="startStopwatch">Iniciar</button>
+        <button id="pauseStopwatch">Pausar</button>
+        <button id="resetStopwatch">Zerar</button>
+      </div>
+    </div>
+
+    <!-- Contagem Regressiva -->
+    <div class="tab-content hidden" id="regressiva">
+      <h2>CONTAGEM REGRESSIVA</h2>
+      <div class="inputs">
+        <input type="number" id="revHours" placeholder="Horas" min="0" />
+        <input type="number" id="revMinutes" placeholder="Minutos" min="0" />
+        <input type="number" id="revSeconds" placeholder="Segundos" min="0" />
+      </div>
+      <div class="timer" id="countdownDisplay">00:00:00</div>
+      <div class="controls">
+        <button id="startCountdown">Iniciar</button>
+        <button id="pauseCountdown">Pausar</button>
+        <button id="resetCountdown">Zerar</button>
+      </div>
+    </div>
+
+    <!-- Timers múltiplos -->
+    <div class="tab-content hidden" id="timers">
+      <h2>TIMERS MÚLTIPLOS</h2>
+      <input type="text" id="activityName" placeholder="Nome da atividade (ex: Corrida)" />
+      <div class="inputs">
+        <input type="number" id="hours" placeholder="Horas" min="0" />
+        <input type="number" id="minutes" placeholder="Minutos" min="0" />
+        <input type="number" id="seconds" placeholder="Segundos" min="0" />
+      </div>
+      <button id="addTimer">Adicionar Cronômetro</button>
+      <div id="timersList"></div>
+    </div>
+
+    <!-- Modo Pomodoro -->
+    <div class="tab-content hidden" id="pomodoro">
+      <h2>MODO POMODORO</h2>
+      <div class="timer" id="pomodoroDisplay">25:00</div>
+      <div class="controls">
+        <button id="startPomodoro">Iniciar</button>
+        <button id="pausePomodoro">Pausar</button>
+        <button id="resetPomodoro">Zerar</button>
+      </div>
+      <p style="text-align:center;" id="pomodoroStatus">FOCO</p>
+    </div>
+
+    <audio id="alarm-sound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
